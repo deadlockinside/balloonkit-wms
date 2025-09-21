@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using WMS.Domain.Entities;
+using WMS.Domain.Interfaces;
 
-namespace WMS.Infrastructure.EmptyRepositories
+namespace WMS.Infrastructure.EmptyRepositories;
+
+public class EmptyStockItemRepository : IStockItemRepository
 {
-    internal class EmptyStockItemRepository
-    {
-    }
+    private List<StockItem> _items = [];
+
+    public List<StockItem> GetAll() => [.. _items];
 }
